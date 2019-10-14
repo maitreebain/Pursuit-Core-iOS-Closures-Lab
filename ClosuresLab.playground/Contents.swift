@@ -6,6 +6,11 @@ import UIKit
 
 
 // Your function here
+func applyKTimes(_ K: Int, closure: () -> ()) {
+    for _ in 1...K {
+    closure()
+}
+}
 
 // Uncomment out the following lines to check your solution
 
@@ -22,6 +27,12 @@ import UIKit
 
 // Your function here
 
+func multiples(of num: Int, in number: [Int]) -> [Int] {
+    number.filter {(etc) -> Bool in
+        return num % etc == 0
+    }
+}
+
 // Uncomment out the following lines to check your solution
 
 //let numbers = [1, 2, 3, 4, 6, 8, 9, 3, 12, 11]
@@ -36,6 +47,18 @@ import UIKit
 
 // Your function here
 
+func largestValue(in num: [Int]) -> [Int] {
+    var result = 0
+    result = num.reduce(0){ currentValue, nextValue in
+        if currentValue > nextValue{
+            return currentValue
+        } else {
+            return nextValue
+        }
+    }
+    return [result]
+}
+
 // Uncomment out the following lines to check your solution
 
 //let moreNumbers = [4, 7, 1, 9, 6, 5, 6, 9]
@@ -49,6 +72,10 @@ import UIKit
 // Write a function called sortedNamesByLastName(in:) that takes in an array of tuples of type (String, String) and returns an array of tuples sorted by last name.
 
 // Your function here
+
+func sortedNamesByLastName(in name: [(String, String)] ) {
+    
+}
 
 // Uncomment out the following lines to check your solution
 
@@ -80,6 +107,14 @@ import UIKit
 // Write a function called sumOfSquaresOfOddNumbers(in:) that returns the sum of the squares of all the odd numbers from an array of Ints.  Use filter, map and reduce in your function.
 
 // Your function here
+
+func sumOfSquaresOfOddNumbers(in sum: [[Int]]) -> Int{
+    let numbers = sum.filter {(num) -> Bool in
+        num % 2 *=  {
+            
+        }
+    }
+}
 
 // Uncomment out the following lines to check your solution
 
