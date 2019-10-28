@@ -73,8 +73,11 @@ func largestValue(in num: [Int]) -> [Int] {
 
 // Your function here
 
-func sortedNamesByLastName(in name: [(String, String)] ) {
-    
+func sortedNamesByLastName(in firstAndLastTuples: [(String, String)] ) {
+    let outPutfour = firstAndLastTuples.filter {expectedOutputFour in
+        firstAndLastTuples.elementsEqual(expectedOutputFour, by: { $0 == $1 })
+        true
+    }
 }
 
 // Uncomment out the following lines to check your solution
@@ -108,14 +111,16 @@ func sortedNamesByLastName(in name: [(String, String)] ) {
 
 // Your function here
 
-func sumOfSquaresOfOddNumbers(in sum: [[Int]]) -> Int{
-    let numbers = sum.filter {(num) -> Bool in
-        num % 2 *=  {
-            
-        }
+func sumOfSquaresOfOddNumbers(in evenMoreNumbers: [Int]) -> Int{
+    var mapSum = evenMoreNumbers.map {$0 * $0}
+    let filteredSum = evenMoreNumbers.filter { expectedOutputFive in
+        expectedOutputFive % 2 == 1
+        
     }
+    let reducedSum = evenMoreNumbers.reduce(0, +)
+    
+    return reducedSum
 }
-
 // Uncomment out the following lines to check your solution
 
 //let evenMoreNumbers = [1, 2, 3, 4, 5, 6]
