@@ -27,18 +27,19 @@ func applyKTimes(_ K: Int, closure: () -> ()) {
 
 // Your function here
 
-func multiples(of num: Int, in number: [Int]) -> [Int] {
-    number.filter {(etc) -> Bool in
-        return num % etc == 0
-    }
+func multiples(of num: Int, in numbers: [Int]) -> [Int] {
+    
+    var expectedOutputOne = numbers.reduce(0, +)
+    var expectedOutputTwo = numbers.filter{ $0 % 3 == 0 }
+    return expectedOutputTwo
 }
 
 // Uncomment out the following lines to check your solution
 
-//let numbers = [1, 2, 3, 4, 6, 8, 9, 3, 12, 11]
-//let expectedOutputTwo = [3, 6, 9, 3, 12]
-//let outputTwo = multiples(of: 3, in: numbers)
-//assert(outputTwo == expectedOutputTwo, "Expected output to be \(expectedOutputTwo), but found \(outputTwo)")
+let numbers = [1, 2, 3, 4, 6, 8, 9, 3, 12, 11]
+let expectedOutputTwo = [3, 6, 9, 3, 12]
+let outputTwo = multiples(of: 3, in: numbers)
+assert(outputTwo == expectedOutputTwo, "Expected output to be \(expectedOutputTwo), but found \(outputTwo)")
 
 
 // Question Three
@@ -47,24 +48,24 @@ func multiples(of num: Int, in number: [Int]) -> [Int] {
 
 // Your function here
 
-func largestValue(in num: [Int]) -> [Int] {
+func largestValue(in moreNumbers: [Int]) -> Int {
     var result = 0
-    result = num.reduce(0){ currentValue, nextValue in
+    result = moreNumbers.reduce(0){ currentValue, nextValue in
         if currentValue > nextValue{
             return currentValue
         } else {
             return nextValue
         }
     }
-    return [result]
+    return result
 }
 
 // Uncomment out the following lines to check your solution
 
-//let moreNumbers = [4, 7, 1, 9, 6, 5, 6, 9]
-//let expectedOutputThree = 9
-//let outputThree = largestValue(in: moreNumbers)
-//assert(outputThree == expectedOutputThree, "Expected output to be \(expectedOutputThree), but found \(outputThree)")
+let moreNumbers = [4, 7, 1, 9, 6, 5, 6, 9]
+let expectedOutputThree = 9
+let outputThree = largestValue(in: moreNumbers)
+assert(outputThree == expectedOutputThree, "Expected output to be \(expectedOutputThree), but found \(outputThree)")
 
 
 // Question Four
@@ -73,12 +74,12 @@ func largestValue(in num: [Int]) -> [Int] {
 
 // Your function here
 
-func sortedNamesByLastName(in firstAndLastTuples: [(String, String)] ) {
-    let outPutfour = firstAndLastTuples.filter {expectedOutputFour in
-        firstAndLastTuples.elementsEqual(expectedOutputFour, by: { $0 == $1 })
-        true
-    }
-}
+//func sortedNamesByLastName(in firstAndLastTuples: [(String, String)] ) {
+//    let outPutfour = firstAndLastTuples.filter {expectedOutputFour in
+//        firstAndLastTuples.elementsEqual(expectedOutputFour, by: { $0 == $1 })
+//        true
+//    }
+//}
 
 // Uncomment out the following lines to check your solution
 
